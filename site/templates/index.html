@@ -1,0 +1,23 @@
+$def with (titles)
+
+<div class="table-responsive">
+<table class="table table-striped table-hover">
+<thead>
+<tr><th>Title</th><th>Author</th><th class="text-center">Owned</th><th class="text-center">Read</th><th></th></tr>
+</thead>
+<tbody>
+$for title in titles:
+    <tr>
+    <td align="left" id="t$title.id"><a href="/view/$title.id">$title.title</a></td>
+    <td align="left" id="t$title.author"><a href="/view/$title.id">$author.lastname, $author.firstname</a></td>
+    <td align="center" id="t$title.id">$title.owned</td>
+    <td id="t$title.id">$title.read</td>
+    <td align="center"><a href="/edit/$title.id">Edit</a></td>
+</tbody>
+</table>
+<form method="post" action="add">
+<p><input type="text" name="firstname" /> <input type="text" name="lastname" /> <input type="submit" value="Add" /></p>
+</form>
+
+</div>
+
